@@ -1,0 +1,52 @@
+Advance Java
+-------------
+Why Advance Java ? 
+Advance java is mainly used to create Web Application.
+
+What is web application?
+
+Application which runs on the browser and whose execution takes place on server is known as web application. It basically follows client server architecture. 
+                request
+       |----------------------->  
+     client  <----HTTP---->  server
+       <-----------------------|    
+		response
+
+Technology used   : 
+	a. Servlet
+	b. JSP
+
+	Frameworks : 
+	c. Hibernate 
+	d. Spring
+	e. Spring boot
+
+Prerequisite : 
+	0. Basics of HTML CSS AND JAVASCRIPT
+	1. Getter and setter methods 
+	2. Pojo vs Bean classes 
+
+	3. Generic programming
+	4. Wrapper classes 
+	5. Collection Framework
+	6. JDBC
+	     -- Jdbc Drivers	
+	7. MySQL database 
+	8. Layers + Architecture + MVC concept	
+	9. Servlet + Life cycle of servlet + How servlet works
+		-- Different ways to create servlet
+	10. Session Management
+		-- HttpSession
+		-- Cookie
+		-- Hidden Form Fields
+		-- Url rewriting
+	11. CRUD operation with the help of Servlet
+	12. Filter
+	13. JSP + Life cycle of JSP
+		-- Scripting Elements
+		-- Implicit Objects
+		-- Directive Tags 
+		-- Standard Tags
+	14. Ajax concept
+	15. Json Concept 
+	16. Project 
