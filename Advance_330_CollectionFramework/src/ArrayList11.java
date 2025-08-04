@@ -24,6 +24,5 @@ public class ArrayList11 {
             for(int element : arr)
                 System.out.print(element+"\t");
             
-              //  Arrays.asList(args); <----------------------------
     }
 }
