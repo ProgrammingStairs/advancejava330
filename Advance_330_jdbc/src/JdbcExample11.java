@@ -21,7 +21,7 @@ public class JdbcExample11 {
             System.out.println("Enter student percentage : ");
             double percentage = sc.nextDouble();
             
-            String query = "insert into student(studname,email,address,percentage) values(?,?,?,?)";
+     String query = "insert into student(studname,email,address,percentage) values(?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, studname);
             ps.setString(2, email);
