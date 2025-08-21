@@ -33,10 +33,27 @@
         <servlet-name>ServletDemo3</servlet-name>
         <url-pattern>/ServletDemo3</url-pattern>
     </servlet-mapping>
-    
+       <servlet>
+        <servlet-name>ServletDemo5</servlet-name>
+        <servlet-class>ServletDemo5</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+       </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletDemo5</servlet-name>
+        <url-pattern>/ServletDemo5</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    
+    <context-param>
+        <param-name>project</param-name>
+        <param-value>Library Management System</param-value>
+    </context-param>
+    
 </web-app>
