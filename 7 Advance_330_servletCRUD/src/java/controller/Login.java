@@ -6,34 +6,28 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-public class Registration extends HttpServlet {
+public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
                 
-            String username = request.getParameter("username");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
-            String address = request.getParameter("address");
                 
-            UserDTO userDto = new UserDTO();
-            userDto.setUsername(username);
-            userDto.setEmail(email);
-            userDto.setPassword(password);
-            userDto.setAddress(address);
-            
             UserDAO userDao = new UserDAO();
-            int i = userDao.addUser(userDto);
+            int i = userDao.loginUser(email,password);
             if(i>0){
-//                out.print("Registration Successfull");
-                RequestDispatcher rd = request.getRequestDispatcher("login.html");
-                out.print("<script>alert('Registration Successfull')</script>");
-                rd.include(request, response);
+//                out.print("Login Successfull");
+                HttpSession session = request.getSession();
+                  session.setAttribute("email", email);
+                  
+                RequestDispatcher rd = request.getRequestDispatcher("ProfileServlet");
+                rd.forward(request, response);
             }else{
-//                out.print("Error while doing Registration");
-                   RequestDispatcher rd = request.getRequestDispatcher("register.html");
-                out.print("<script>alert('Error while Registration')</script>");
+//                out.print("Error while doing Login");
+                   RequestDispatcher rd = request.getRequestDispatcher("login.html");
+                out.print("<script>alert('Error while Login')</script>");
                 rd.include(request, response);
             }
         }catch(Exception e){
