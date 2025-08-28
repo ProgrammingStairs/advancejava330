@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./public/style.css">
+        <style>
+            body{
+                font-family: candara;
+                padding:30px;
+            } 
+            #nav{
+                height: 50px;
+                background-color: black;
+            }
+            #nav ul{
+                padding-top: 10px;
+                list-style: none;
+            }
+            #nav ul li {
+                display: inline;
+            }
+            #nav ul li a{
+                font-size: 20px;
+                color:white;
+                margin-left: 40px;
+                text-decoration: none;
+            }
+            p{
+                font-size: 20px;
+                text-align: justify;
+            }
+            input[type="email"],input[type="password"]{
+                height:30px;
+                width:300px;
+                margin:5px;
+                font-size: 17px;
+            }
+            input[type="submit"],input[type="reset"]{
+                height:35px;
+                width:305px;
+                margin:5px;
+                font-size: 17px;
+                background-color: black;
+                color:white;
+                border-width: 0px;
+            }
+            a{
+                text-decoration: none;
+                font-size: 18px;
+                color:black;
+                margin-left:20px; 
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Servlet CRUD operation</h1>
+        <div id="nav">
+             <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="ProfileServlet">ProfileServlet</a></li>
+            </ul>
+        </div>
+        <h1>Login</h1>
+        <form action="Login" method="post">
+            <input
+                type="email"
+                placeholder="Enter Email"
+                id="email"
+                name="email"
+            ><br>
+            <input
+                type="password"
+                placeholder="Enter Password"
+                id="password"
+                name="password"
+            ><br>
+            <input
+                type="submit"
+                value="Login"
+            ><br>
+            <input
+                type="reset"
+                value="Reset"
+            ><br>
+        </form>
+        <a href="register.html">
+            Yet Not Registered ? Register Here
+        </a>
+    </body>
+</html>

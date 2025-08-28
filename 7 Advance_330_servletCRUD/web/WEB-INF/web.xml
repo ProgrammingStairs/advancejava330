@@ -24,6 +24,14 @@
         <servlet-name>DeleteServlet</servlet-name>
         <servlet-class>controller.DeleteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateFormServlet</servlet-name>
+        <servlet-class>controller.UpdateFormServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Updation</servlet-name>
+        <servlet-class>controller.Updation</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration</servlet-name>
         <url-pattern>/Registration</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>DeleteServlet</servlet-name>
         <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateFormServlet</servlet-name>
+        <url-pattern>/UpdateFormServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Updation</servlet-name>
+        <url-pattern>/Updation</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

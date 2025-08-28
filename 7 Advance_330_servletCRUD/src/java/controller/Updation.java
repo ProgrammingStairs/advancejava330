@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class DeleteServlet extends HttpServlet {
+public class Updation extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -22,17 +22,27 @@ public class DeleteServlet extends HttpServlet {
             HttpSession session = request.getSession();
             String email = (String)session.getAttribute("email");
             
-                UserDAO userDao = new UserDAO();
-                String deleteEmail = request.getParameter("deleteEmail");
-                        
-                int i = userDao.deleteEmail(deleteEmail);
-                if(i>0)
-                    out.print("<script>alert('User deleted successfully')</script>");
+           UserDAO userDao = new UserDAO();
+            String username = request.getParameter("username");
+            String updateEmail = request.getParameter("email");
+            String password = request.getParameter("password");
+            String address = request.getParameter("address");
+                
+            UserDTO userDto = new UserDTO();
+            userDto.setUsername(username);
+            userDto.setEmail(updateEmail);
+            userDto.setPassword(password);
+            userDto.setAddress(address);
+            
+             int i = userDao.updateUser(userDto);
+            if(i>0)
+                    out.print("<script>alert('User Updated successfully')</script>");
                 else
-                    out.print("<script>alert('Error while deleting user')</script>");
+                    out.print("<script>alert('Error while updating user')</script>");
                 
                     RequestDispatcher rd = request.getRequestDispatcher("ViewUsersServlet");
                     rd.include(request, response);
+
         }
     }
 

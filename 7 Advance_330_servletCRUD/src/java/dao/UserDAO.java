@@ -80,4 +80,42 @@ public class UserDAO {
         return i;
     }
 
+     public UserDTO getUser(String email){
+         UserDTO user = new UserDTO();
+         try{
+                    Connection con = GetConnection.getConnect();
+                    String query = "select * from user where email = ?";
+                    PreparedStatement ps = con.prepareStatement(query);
+                    ps.setString(1, email);
+                    ResultSet rs = ps.executeQuery();
+                    if(rs.next()){
+                            user.setUserId(rs.getInt(1));
+                            user.setUsername(rs.getString(2));
+                            user.setEmail(rs.getString(3));
+                            user.setPassword(rs.getString(4));
+                            user.setAddress(rs.getString(5));
+                    }
+            }catch(Exception e){
+                System.out.println("Exception : "+e);
+            }
+         return user;
+     }   
+    public int updateUser(UserDTO userObj){
+        int i=0;
+        try{
+                Connection con = GetConnection.getConnect();
+               String query = "update user set username=?,password=?,address=? where email=?";
+                PreparedStatement ps =  con.prepareStatement(query);
+                ps.setString(1, userObj.getUsername());
+                 ps.setString(2, userObj.getPassword());
+                  ps.setString(3, userObj.getAddress());
+                   ps.setString(4, userObj.getEmail());
+               
+                i = ps.executeUpdate();
+        }catch(Exception e){
+            System.out.println("Exception : "+e);
+        }
+        return i;
+    }
+     
 }

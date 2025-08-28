@@ -26,9 +26,8 @@ public class ViewUsersServlet extends HttpServlet {
                 List<UserDTO> usersList = userDao.getAllUsersList(); 
                 out.print("<table align='center' cellspacing='0' cellpadding='10' border='1'><tr><th>S.No</th><th>Username</th><th>Email</th><th>Password</th><th>Address</th><th colspan='2'>Action</th></tr>");
                 for(int i=0;i<usersList.size();i++){
-                  out.println("---> "+i+"-------> "+usersList.get(i).getUsername());
 
-                    out.print("<tr><td>"+(i+1)+"</td><td>"+usersList.get(i).getUsername()+"</td><td>"+usersList.get(i).getEmail()+"</td><td>"+usersList.get(i).getPassword()+"</td><td>"+usersList.get(i).getAddress()+"</td><td>Update</td><td><form action='DeleteServlet'><input type='hidden' name='deleteEmail'  value='<%=usersList.get(i).getEmail()%>'><button>Delete</button></form></td></tr>");
+                    out.print("<tr><td>"+(i+1)+"</td><td>"+usersList.get(i).getUsername()+"</td><td>"+usersList.get(i).getEmail()+"</td><td>"+usersList.get(i).getPassword()+"</td><td>"+usersList.get(i).getAddress()+"</td><td><form action='UpdateFormServlet'><input type='hidden' name='updateEmail' value='"+usersList.get(i).getEmail()+"'><button>Update</button></form></td><td><form action='DeleteServlet'><input type='hidden' name='deleteEmail'  value='"+usersList.get(i).getEmail()+"'><button>Delete</button></form></td></tr>");
                 }
                 out.print("</table>");
         }
