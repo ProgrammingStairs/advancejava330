@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+    <center><h2>Example of JSP Scripting Element</h2></center>
+    <form action="bill.jsp" method ="post">
+    <table cellspacing="0"  border="1" align="center">
+        <tr>
+            <th>S.No</th>
+            <th>Category</th>
+            <th>Price<br>(Per Piece)</th>
+            <th>Quantity</th>
+        </tr>   
+        <tr>
+            <td>1</td>
+            <td>Soap</td>
+            <td> <input id="p1" name="p1" type="number" min="0" step="1" placeholder="Enter Price (Per Piece)"></td>
+            <td><input id="q1" name="q1" type="number" min="0" step="1" placeholder="Enter Quantity"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Fairness Cream</td>
+            <td> <input id="p2" name="p2" type="number" min="0" step="1" placeholder="Enter Price (Per Piece)"></td>
+            <td><input id="q2" name="q2" type="number" min="0" step="1" placeholder="Enter Quantity"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>GST</td>
+            <td> <input id="gst" name="gst" type="number" min="0"  placeholder="Enter GST"></td>
+            <td>
+                <button>Calculate</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+     </body>
+</html>
