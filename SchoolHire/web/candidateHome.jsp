@@ -11,10 +11,10 @@
             <img src="public/images/logo.png" id="logoImg" style="height: 60px;">
             <span style="font-weight: bolder;font-family: candara;font-size: 32px; position: absolute; margin-top: 10px;margin-left: 10px;">SchoolHire</span>
         </div>
-        <%@include  file="adminHeaderNav.jsp"%>
+        <%@include  file="candidateHeaderNav.jsp"%>
         <div id="home">
             <blockquote>
-                <%
+                                <%
                     String email = (String)session.getAttribute("email");
                 %>
                 <h1 style="font-family: candara;">Welcome <%=email%></h1>

@@ -2,7 +2,7 @@
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="">Candidate</a></li>
-                <li><a href="">AddVacancy</a></li>
+                <li><a href="addVacancy.jsp">AddVacancy</a></li>
                 <li><a href="">ViewVacancy</a></li>
                 <li><a href="">Applied Candidate</a></li>
                 <li><a href="">UpdatePassword</a></li>

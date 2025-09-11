@@ -7,6 +7,7 @@
     AdminDao adminDao = new AdminDao();
     int i = adminDao.checkAdminLogin(email, password);
     if(i!=0){
+            session.setAttribute("email", email);
         System.out.println("admin login successfull");
 %>
         <script>alert("Admin Login Successfull")</script>

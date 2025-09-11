@@ -36,7 +36,7 @@
         <div id="home">
             <blockquote>
                 <h1 style="font-family: candara;">Candidate Login</h1>
-                <form action="" method="post">
+                <form action="candidateLoginDB.jsp" method="post">
                         <input 
                             type="email"
                             placeholder="Enter Email"
