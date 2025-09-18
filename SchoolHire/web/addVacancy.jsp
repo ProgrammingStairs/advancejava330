@@ -38,10 +38,12 @@
                        <%
                     String email = (String)session.getAttribute("email");
                 %>
-                  <h1 style="font-family: candara;">Welcome <%=email%></h1>
-                <h1 style="font-family: candara;">Add Vacancy</h1>
-                <form action="addVacancydb.jsp" method="post">
-                    <input 
+                  <h2 style="font-family: candara;">Welcome <%=email%></h2>
+                  <center><h2 style="font-family: candara;">Add Vacancy</h2></center>
+                <form action="addVacancyDb.jsp" method="post">
+
+                    <div style="width:48%; float:left; text-align: center">
+                                            <input 
                             type="text"
                             placeholder="Enter Vacancy Name"
                             name="vacancyName"
@@ -88,7 +90,7 @@
                             id="location"
                             required
                          ><br>
-                        <input 
+  <input 
                             type="text"
                             placeholder="Enter Timings"
                             name="timings"
@@ -101,19 +103,22 @@
                         <option value="Bond-Yes">Bond-Yes</option>
                         <option value="Bond-No">Bond-No</option>
                     </select><br>
+
+                    </div>
+                    <div style="width:48%; float:left; text-align: center">
                     Gender Preference<br>
                     <select id="genderPre" name="genderPre">
                         <option value="">Select Gender Preference</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
-                    </select><br>
+                    </select><br>                                              
                     Joining Status<br>
                     <select id="joiningStatus" name="joiningStatus">
                         <option value="">Select Joining Status</option>
-                        <option value="">Immediate Joiners Required</option>
-                        <option value="">Join within 10 Days</option>
-                        <option value="">Join within a month</option>
-                        <option value="">Join within 2 months</option>
+                        <option value="Immediate Joiners Required">Immediate Joiners Required</option>
+                        <option value="Join within 10 Days">Join within 10 Days</option>
+                        <option value="Join within a month">Join within a month</option>
+                        <option value="Join within 2 months">Join within 2 months</option>
                     </select><br>
                     AdvDate : <br>
                     <input 
@@ -143,7 +148,11 @@
                             type="reset"
                             value="Reset"
                          ><br>
-                </form>
+
+                    </div>
+                </form>                 
+                
+                
             </blockquote>
         </div>
         

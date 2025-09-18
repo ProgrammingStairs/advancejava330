@@ -47,4 +47,22 @@ public class CandidateDao {
         return i;
     }
 
+    public CandidateDto getCandidateInfo(String email){
+            CandidateDto candidate = new CandidateDto();
+        try {
+            Connection con = GetConnection.getConnect();
+            String query = "select candidateId,name from candidate where email=?";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                candidate.setCandidateId(rs.getInt(1));
+                candidate.setName(rs.getString(2));
+            }
+        } catch (SQLException e) {
+            System.out.println("Exception : " + e);
+        }
+        return candidate;
+    }    
+        
 }

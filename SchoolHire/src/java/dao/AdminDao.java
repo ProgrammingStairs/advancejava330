@@ -24,4 +24,20 @@ public class AdminDao {
         }
         return i;
     }
+    
+        public int adminUpdateStatus(int appliedVacancyId, String applyStatus) {
+        int i=0;
+        try {
+            Connection con = GetConnection.getConnect();
+            String query = "update appliedVacancy set applyStatus=? where appliedVacancyId = ?";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, applyStatus);
+            ps.setInt(2, appliedVacancyId);
+            i = ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Exception : " + e);
+        }
+        return i;
+    }
+
 }
